@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\caption{Break-period results across quantile levels and horizons.\label{tab:robust}}
+\centering\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccrrrrcrrrrc@{}}
+\toprule
+ & & \multicolumn{5}{c}{\textbf{Linear QR}} & \multicolumn{5}{c}{\textbf{Gradient boosting}} \\
+\cmidrule(lr){3-7}\cmidrule(l){8-12}
+$\alpha$ & $h$ & \textbf{Frozen} & \textbf{Exp.} & \textbf{Exp.+RQC} & \textbf{Gain (\%)} & $p_{\mathrm{EWC}}$ & \textbf{Frozen} & \textbf{Exp.} & \textbf{Exp.+RQC} & \textbf{Gain (\%)} & $p_{\mathrm{EWC}}$ \\
+\midrule
+0.75 & 1 & 6.262 & 3.677 & 3.668 & 0.2 & .866 & 5.081 & 3.760 & 3.729 & 0.8 & .551 \\
+0.75 & 3 & 10.411 & 5.996 & 5.747 & 4.2 & .153 & 12.889 & 7.301 & 6.382 & 12.6 & .100 \\
+0.75 & 6 & 15.078 & 9.796 & 9.068 & 7.4 & .044 & 21.567 & 13.186 & 10.564 & 19.9 & .024 \\
+0.90 & 1 & 8.539 & 2.586 & 2.565 & 0.8 & .677 & 4.083 & 2.683 & 2.523 & 6.0 & .130 \\
+0.90 & 3 & 11.360 & 3.936 & 3.734 & 5.1 & .041 & 12.392 & 6.088 & 4.335 & 28.8 & .041 \\
+0.90 & 6 & 15.200 & 6.606 & 6.354 & 3.8 & .119 & 21.339 & 12.242 & 7.420 & 39.4 & .024 \\
+0.95 & 1 & 10.220 & 1.840 & 1.809 & 1.7 & .591 & 3.695 & 1.990 & 1.748 & 12.2 & .056 \\
+0.95 & 3 & 13.436 & 2.721 & 2.544 & 6.5 & .144 & 10.492 & 4.851 & 2.961 & 39.0 & .031 \\
+0.95 & 6 & 11.555 & 4.963 & 4.727 & 4.8 & .141 & 19.582 & 10.541 & 5.170 & 51.0 & .031 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Break-period mean pinball loss at quantile level $\alpha$ and horizon $h$ months. Gain is the percentage reduction in loss from adding the 12-month residual-quantile correction to the expanding-window forecast; $p_{\mathrm{EWC}}$ is the fixed-smoothing $p$-value for that difference. Hyperparameters are those selected for $\alpha=0.90$, $h=3$.
+\end{tablenotes}
+\end{table*}

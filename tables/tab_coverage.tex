@@ -1,0 +1,20 @@
+\begin{table}[t]
+\caption{Break-period coverage tests against the nominal 0.90.\label{tab:coverage}}
+\centering\footnotesize
+\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}lrcccc@{}}
+\toprule
+\textbf{Forecast} & \textbf{Cov.} & \textbf{95\% CI} & $p_{\mathrm{NW}}$ & $p_{\mathrm{HLN}}$ & $p_{\mathrm{EWC}}$ \\
+\midrule
+Empirical q90, rolling & 0.620 & [0.57, 0.67] & $<$.001 & $<$.001 & .004 \\
+Linear QR, expanding & 0.761 & [0.67, 0.85] & .008 & .044 & .063 \\
+Linear QR, expanding + RQC & 0.817 & [0.70, 0.93] & .143 & .323 & .260 \\
+Linear QR, expanding + ACI & 0.808 & [0.66, 0.96] & .213 & .409 & .332 \\
+Boosting, expanding & 0.540 & [0.48, 0.60] & $<$.001 & $<$.001 & .001 \\
+Boosting, expanding + RQC & 0.714 & [0.63, 0.80] & $<$.001 & .009 & .037 \\
+Boosting, expanding + ACI & 0.769 & [0.62, 0.92] & .082 & .245 & .217 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Mean of monthly coverage over the 11 break origin months, with tests of the null that it equals 0.90.
+\end{tablenotes}
+\end{table}

@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\caption{Ex-post decomposition of forecast errors.\label{tab:decomp}}
+\centering\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lrrcccrrr@{}}
+\toprule
+ & \multicolumn{5}{c}{\textbf{Common share $S$}} & \textbf{Oracle shift} & \multicolumn{2}{c}{\textbf{Residual SD}} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-7}\cmidrule(l){8-9}
+\textbf{Base forecast} & \textbf{Stable} & \textbf{Break} & \textbf{95\% CI} & \textbf{Placebo range} & \textbf{Above all} & \textbf{Break} & \textbf{Stable} & \textbf{Break} \\
+\midrule
+Empirical, frozen & 0.26 & 0.80 & [0.67, 0.87] & 0.03--0.32 & Yes & 24.1 & 9.7 & 15.6 \\
+Linear QR, frozen & 0.70 & 0.89 & [0.80, 0.94] & 0.59--0.81 & Yes & 28.3 & 10.8 & 15.6 \\
+Linear QR, expanding & 0.57 & 0.44 & [0.23, 0.56] & 0.23--0.65 & No & 9.6 & 10.8 & 15.8 \\
+Linear QR, rolling & 0.66 & 0.76 & [0.50, 0.86] & 0.48--0.81 & No & 15.8 & 11.6 & 16.0 \\
+Boosting, frozen & 0.70 & 0.90 & [0.83, 0.94] & 0.67--0.77 & Yes & 31.3 & 11.6 & 16.3 \\
+Boosting, expanding & 0.61 & 0.73 & [0.65, 0.78] & 0.47--0.70 & Yes & 19.6 & 10.9 & 16.4 \\
+Boosting, rolling & 0.59 & 0.74 & [0.65, 0.79] & 0.49--0.68 & Yes & 19.7 & 11.0 & 16.5 \\
+Boosting, expanding + RQC & 0.38 & 0.52 & [0.41, 0.59] & 0.28--0.47 & Yes & 12.4 & 10.9 & 16.4 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} $S$ is the share of the loss reduction available from commodity-specific hindsight shifts that one common hindsight shift delivers (equation~\ref{eq:share}). Intervals use 20,000 circular block-bootstrap draws over origin months (block length three). The placebo range covers the 16 rolling 11-month windows of stable months. The oracle shift is the mean common hindsight shift in percentage points. Residual SD is the mean within-month cross-sectional standard deviation of $y-q$.
+\end{tablenotes}
+\end{table*}

@@ -1,0 +1,41 @@
+\begin{table*}[t]
+\caption{Out-of-sample performance of 90th-percentile forecasts of three-month price growth.\label{tab:main}}
+\centering\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}llrrrr@{}}
+\toprule
+ & & \multicolumn{2}{c}{\textbf{Stable targets}} & \multicolumn{2}{c}{\textbf{Break targets}} \\
+\cmidrule(lr){3-4}\cmidrule(l){5-6}
+\textbf{Estimation} & \textbf{Correction} & \textbf{Loss} & \textbf{Coverage} & \textbf{Loss} & \textbf{Coverage} \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Unconditional benchmarks}} \\
+Empirical q90, frozen & & 1.931 & 0.882 & 8.014 & 0.442 \\
+Commodity q90, frozen & & 1.998 & 0.853 & 7.984 & 0.428 \\
+Empirical q90, rolling 12 months & & 1.947 & 0.902 & 5.349 & 0.620 \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Linear QR}} \\
+Frozen & None & 2.450 & 0.737 & 11.360 & 0.289 \\
+ & RQC & 4.648 & 0.952 & 5.349 & 0.604 \\
+ & ACI & 4.554 & 0.921 & 4.430 & 0.696 \\
+Expanding & None & 2.123 & 0.855 & 3.936 & 0.761 \\
+ & RQC & 2.118 & 0.946 & \textbf{3.734} & 0.817 \\
+ & ACI & 2.084 & 0.928 & 3.945 & 0.808 \\
+Rolling (24 months) & None & 2.238 & 0.783 & 6.546 & 0.613 \\
+ & RQC & 2.812 & 0.926 & 5.010 & 0.790 \\
+ & ACI & 2.806 & 0.900 & 5.531 & 0.813 \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Gradient boosting}} \\
+Frozen & None & 2.672 & 0.685 & 12.392 & 0.255 \\
+ & RQC & 2.004 & 0.887 & 5.407 & 0.608 \\
+ & ACI & 2.025 & 0.898 & 4.278 & 0.765 \\
+Expanding & None & 2.052 & 0.797 & 6.088 & 0.540 \\
+ & RQC & 1.869 & 0.911 & 4.335 & 0.714 \\
+ & ACI & 1.881 & 0.914 & 4.256 & 0.769 \\
+Rolling (24 months) & None & 2.083 & 0.788 & 6.155 & 0.539 \\
+ & RQC & 1.879 & 0.909 & 4.295 & 0.724 \\
+ & ACI & 1.894 & 0.912 & 4.185 & 0.777 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Loss is the mean pinball loss at $\alpha=0.90$; coverage is the share of outcomes at or below the forecast (nominal 0.90). There are 41,363 stable and 17,501 break forecasts. RQC is the residual-quantile correction with a 12-month window; ACI is adaptive conformal inference on the same window with $\gamma=0.05$. Every refit and correction uses only targets that had matured by the forecast origin. The lowest break-period loss is in bold.
+\end{tablenotes}
+\end{table*}

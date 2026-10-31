@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\caption{Adaptive conformal inference: sensitivity to the step size $\gamma$.\label{tab:aci}}
+\centering\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lrrrrrrrrrr@{}}
+\toprule
+ & \multicolumn{6}{c}{\textbf{Break targets}} & \multicolumn{4}{c}{\textbf{Stable targets}} \\
+\cmidrule(lr){2-7}\cmidrule(l){8-11}
+\textbf{Base forecast} & \textbf{RQC} & \textbf{0.01} & \textbf{0.025} & \textbf{0.05} & \textbf{0.10} & \textbf{0.20} & \textbf{RQC} & \textbf{0.01} & \textbf{0.05} & \textbf{0.20} \\
+\midrule
+Linear QR, frozen & 5.349 & 5.336 & 5.090 & 4.430 & 4.477 & 4.646 & 4.648 & 4.620 & 4.554 & 4.464 \\
+Linear QR, expanding & 3.734 & 3.791 & 3.859 & 3.945 & 4.252 & 4.711 & 2.118 & 2.104 & 2.084 & 2.173 \\
+Boosting, frozen & 5.407 & 5.015 & 4.589 & 4.278 & 4.276 & 3.937 & 2.004 & 2.007 & 2.025 & 2.150 \\
+Boosting, expanding & 4.335 & 4.286 & 4.247 & 4.256 & 4.883 & 4.378 & 1.869 & 1.871 & 1.881 & 1.947 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Mean pinball loss ($\alpha=0.90$, $h=3$). Columns headed by a number report ACI with that step size $\gamma$; RQC is the fixed-level residual-quantile correction. Both use a 12-month residual window.
+\end{tablenotes}
+\end{table*}

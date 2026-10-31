@@ -1,0 +1,8 @@
+model,parameters,loss,coverage
+static_reference,none,2.323854939539563,0.9311774896320016
+linear_qr,l2=1e-05,2.921106013809371,0.7135807653945089
+linear_qr,l2=0.0001,2.290572522652894,0.8487584650112867
+linear_qr,l2=0.001,2.2642418807880142,0.9038269725444905
+hist_gb,"{'max_iter': 180, 'max_leaf_nodes': 15, 'min_samples_leaf': 150, 'l2_regularization': 1.0}",2.244520749552315,0.896320016798782
+hist_gb,"{'max_iter': 220, 'max_leaf_nodes': 31, 'min_samples_leaf': 250, 'l2_regularization': 2.0}",2.2521687587673713,0.8847183579190508
+hist_gb,"{'max_iter': 220, 'max_leaf_nodes': 31, 'min_samples_leaf': 100, 'l2_regularization': 5.0}",2.2348618162106333,0.887763137172555
