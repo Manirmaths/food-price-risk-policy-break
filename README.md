@@ -2,7 +2,7 @@
 
 Code and results for the paper
 
-> Ibrahim, M., Alhassan, B., Danjuma, S. M. and Shehu, I. A. *Forecasting Food Price Risk Through a Policy Break: Re-Estimation, Delayed Level Correction and the Limits of Tree Extrapolation.* Submitted to the *Journal of Forecasting*.
+> Ibrahim, M., Isa, G. A., Alhassan, B., Danjuma, S. M. and Shehu, I. A. *Forecasting Food Price Risk Through a Policy Break: Re-Estimation, Delayed Level Correction and the Limits of Tree Extrapolation.* Submitted to the *Journal of Forecasting*.
 
 The paper forecasts the 90th percentile of three-month retail price growth for 43 foods in Nigeria's 36 states and the Federal Capital Territory, using the National Bureau of Statistics (NBS) Selected Food Price Watch from January 2017 to April 2024. The evaluation covers the 2023 removal of the petrol subsidy and the unification of the exchange rate.
 
