@@ -1,0 +1,31 @@
+\begin{table*}[t]
+\caption{Month-level tests of equal predictive accuracy, $\alpha=0.90$, $h=3$.\label{tab:tests}}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lrcrccc@{}}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Stable (26 months)}} & \multicolumn{4}{c}{\textbf{Break (11 months)}} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-7}
+\textbf{Loss difference} & \textbf{Mean} & \textbf{$p_{\mathrm{EWC}}$} & \textbf{Mean} & \textbf{$p_{\mathrm{NW}}$} & \textbf{$p_{\mathrm{HLN}}$} & \textbf{$p_{\mathrm{EWC}}$} \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Re-estimation and pooled corrections}} \\
+Expanding $-$ frozen, linear QR & -0.327 & .139 & -7.425 & .014 & .083 & .089 \\
+Expanding $-$ frozen, boosting & -0.620 & .010 & -6.304 & .010 & .073 & .087 \\
+Expanding + RQC $-$ expanding, linear QR & -0.005 & .978 & -0.202 & .010 & $<$.001 & .041 \\
+Expanding + RQC $-$ expanding, boosting & -0.182 & .096 & -1.753 & .002 & .027 & .041 \\
+RQC $-$ ACI, expanding boosting & -0.011 & .281 & 0.079 & .734 & .811 & .820 \\
+Expanding boosting $-$ expanding linear QR & -0.071 & .717 & 2.152 & .006 & .046 & .071 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\textit{Two-scale panel calibration}} \\
+TSPC $-$ RQC, empirical quantile, frozen & 0.037 & .015 & -0.625 & .010 & .043 & .085 \\
+TSPC $-$ RQC, linear QR, frozen & -1.823 & .172 & 0.638 & .123 & .183 & .153 \\
+TSPC $-$ ACI, linear QR, frozen & -1.729 & .161 & 1.557 & .085 & .221 & .163 \\
+TSPC $-$ RQC, boosting, frozen & 0.002 & .935 & -0.740 & .041 & .160 & .144 \\
+TSPC $-$ RQC, linear QR, expanding & 0.120 & .463 & 0.675 & .123 & .221 & .219 \\
+TSPC $-$ RQC, boosting, expanding & 0.039 & .102 & -0.065 & .656 & .734 & .762 \\
+TSPC $-$ ACI, boosting, expanding & 0.027 & .147 & 0.013 & .963 & .973 & .975 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Each row is the mean over origin months of the first forecast's mean pinball loss minus the second's; negative values favour the first. $p_{\mathrm{NW}}$: Newey--West with $h-1$ lags; $p_{\mathrm{HLN}}$: Diebold--Mariano with the Harvey--Leybourne--Newbold correction; $p_{\mathrm{EWC}}$: fixed-smoothing test with the equal-weighted cosine variance and $B=\lfloor T^{1/2}\rfloor$. All use Student-$t$ critical values.
+\end{tablenotes}
+\end{table*}

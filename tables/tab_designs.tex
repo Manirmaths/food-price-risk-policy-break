@@ -1,0 +1,26 @@
+\begin{table}[t]
+\caption{TSPC and ACI relative to RQC across quantile levels and horizons.\label{tab:designs}}
+\centering\footnotesize\setlength{\tabcolsep}{2.6pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}ccc rrr rrr r@{}}
+\toprule
+ & & & \multicolumn{3}{c}{\textbf{TSPC / RQC}} & \multicolumn{3}{c}{\textbf{ACI / RQC}} & \\
+\cmidrule(lr){4-6}\cmidrule(lr){7-9}
+$\alpha$ & $h$ & \textbf{Wins} & \textbf{Stable} & \textbf{Break} & \textbf{All} & \textbf{Stable} & \textbf{Break} & \textbf{All} & $\widehat\rho_h$ \\
+\midrule
+0.75 & 1 & 3/5 & 0.87 & 1.01 & 0.90 & 0.97 & 0.98 & 0.97 & 0.49 \\
+0.75 & 3 & 4/5 & 0.95 & 0.95 & 0.93 & 0.98 & 0.96 & 0.96 & 0.46 \\
+0.75 & 6 & 5/5 & 0.85 & 0.89 & 0.83 & 0.97 & 1.06 & 0.99 & 0.42 \\
+0.90 & 1 & 3/5 & 0.87 & 1.02 & 0.91 & 1.00 & 0.97 & 0.99 & 0.58 \\
+0.90 & 3 & 3/7 & 0.93 & 1.07 & 0.98 & 1.00 & 0.96 & 0.98 & 0.32 \\
+0.90 & 6 & 5/5 & 0.82 & 0.89 & 0.80 & 0.99 & 1.06 & 1.00 & 0.43 \\
+0.95 & 1 & 2/5 & 0.87 & 1.06 & 0.93 & 1.00 & 0.98 & 0.99 & 0.59 \\
+0.95 & 3 & 3/5 & 0.95 & 1.06 & 0.99 & 1.01 & 0.92 & 0.97 & 0.39 \\
+0.95 & 6 & 5/5 & 0.83 & 0.93 & 0.83 & 0.99 & 1.06 & 1.00 & 0.44 \\
+\midrule
+All &  & 33/47 & 0.89 & 0.99 & 0.90 & 0.99 & 0.99 & 0.98 & 0.45 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Ratios are mean pinball loss relative to RQC, averaged over base forecasts (seven for the primary design, which includes rolling refits, five otherwise); ACI ratios exclude the empirical quantile. Wins counts base forecasts for which TSPC has lower whole-sample loss than RQC. $\widehat\rho_h$ is the mean lag-$h$ autocorrelation of the monthly median residual, computed ex post over the full residual history.
+\end{tablenotes}
+\end{table}

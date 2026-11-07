@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\caption{Delayed calibration of each base forecast, $\alpha=0.90$, $h=3$.\label{tab:tspc}}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lrrrrrrrrrr@{}}
+\toprule
+ & \multicolumn{5}{c}{\textbf{Stable targets}} & \multicolumn{5}{c}{\textbf{Break targets}} \\
+\cmidrule(lr){2-6}\cmidrule(l){7-11}
+\textbf{Base forecast} & None & RQC & ACI & TSPC & TSPC-LS & None & RQC & ACI & TSPC & TSPC-LS \\
+\midrule
+Empirical quantile, frozen & 1.931 & \textbf{1.943} & -- & 1.979 & 2.015 & 8.014 & 5.349 & -- & 4.725 & \textbf{4.406} \\
+Linear QR, frozen & 2.450 & 4.648 & 4.554 & \textbf{2.825} & 2.879 & 11.360 & 5.349 & \textbf{4.430} & 5.987 & 4.819 \\
+Linear QR, expanding & 2.123 & 2.118 & \textbf{2.084} & 2.238 & 2.245 & 3.936 & \textbf{3.734} & 3.945 & 4.408 & 4.431 \\
+Linear QR, rolling & 2.238 & 2.812 & 2.806 & \textbf{2.280} & 2.337 & 6.546 & \textbf{5.010} & 5.531 & 7.103 & 6.292 \\
+Boosting, frozen & 2.672 & \textbf{2.004} & 2.025 & 2.006 & 2.045 & 12.392 & 5.407 & 4.278 & 4.667 & \textbf{4.261} \\
+Boosting, expanding & 2.052 & \textbf{1.869} & 1.881 & 1.908 & 1.988 & 6.088 & 4.335 & \textbf{4.256} & 4.270 & 4.269 \\
+Boosting, rolling & 2.083 & \textbf{1.879} & 1.894 & 1.901 & 1.972 & 6.155 & 4.295 & \textbf{4.185} & 4.373 & 4.500 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Mean pinball loss. RQC: pooled residual-quantile correction; ACI: adaptive conformal inference ($\gamma=0.05$); TSPC: two-scale panel calibration; TSPC-LS: TSPC with a cross-sectional scale. All corrections use the same 12 months of matured residuals. The lowest loss among the corrections is in bold. The empirical quantile has no ACI variant because its forecast is constant.
+\end{tablenotes}
+\end{table*}
