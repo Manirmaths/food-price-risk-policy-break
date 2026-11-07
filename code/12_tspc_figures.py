@@ -39,7 +39,7 @@ def main():
         ax.plot(p.index, p["tspc"], color=COL["tspc"], label="TSPC")
         ax.axvline(figs.BREAK_ORIGIN, color=INK, ls="--", lw=0.8)
         ax.set_title(title, loc="left")
-        ax.set_ylabel("Shift (percentage points)")
+        ax.set_ylabel("Shift (log points)")
         figs.months_axis(ax, 12)
     axes[0].legend(frameon=False, loc="center", bbox_to_anchor=(0.66, 0.56))
 
@@ -56,7 +56,7 @@ def main():
     ax.axhline(0, color=INK, lw=0.5)
     ax.axvline(figs.BREAK_ORIGIN, color=INK, ls="--", lw=0.8)
     ax.set_title("(c) Level and shape, boosting", loc="left")
-    ax.set_ylabel("Percentage points")
+    ax.set_ylabel("Log points")
     figs.months_axis(ax, 12)
     ax.set_ylim(-14, 46)
     ax.legend(frameon=False, loc="upper left", ncol=2, columnspacing=0.8, handlelength=1.6)

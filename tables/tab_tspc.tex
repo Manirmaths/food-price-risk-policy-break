@@ -7,7 +7,7 @@
 \cmidrule(lr){2-6}\cmidrule(l){7-11}
 \textbf{Base forecast} & None & RQC & ACI & TSPC & TSPC-LS & None & RQC & ACI & TSPC & TSPC-LS \\
 \midrule
-Empirical quantile, frozen & 1.931 & \textbf{1.943} & -- & 1.979 & 2.015 & 8.014 & 5.349 & -- & 4.725 & \textbf{4.406} \\
+Empirical quantile, frozen & 1.931 & \textbf{1.943} & 1.966 & 1.979 & 2.015 & 8.014 & 5.349 & 4.764 & 4.725 & \textbf{4.406} \\
 Linear QR, frozen & 2.450 & 4.648 & 4.554 & \textbf{2.825} & 2.879 & 11.360 & 5.349 & \textbf{4.430} & 5.987 & 4.819 \\
 Linear QR, expanding & 2.123 & 2.118 & \textbf{2.084} & 2.238 & 2.245 & 3.936 & \textbf{3.734} & 3.945 & 4.408 & 4.431 \\
 Linear QR, rolling & 2.238 & 2.812 & 2.806 & \textbf{2.280} & 2.337 & 6.546 & \textbf{5.010} & 5.531 & 7.103 & 6.292 \\
@@ -17,6 +17,6 @@ Boosting, rolling & 2.083 & \textbf{1.879} & 1.894 & 1.901 & 1.972 & 6.155 & 4.2
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} Mean pinball loss. RQC: pooled residual-quantile correction; ACI: adaptive conformal inference ($\gamma=0.05$); TSPC: two-scale panel calibration; TSPC-LS: TSPC with a cross-sectional scale. All corrections use the same 12 months of matured residuals. The lowest loss among the corrections is in bold. The empirical quantile has no ACI variant because its forecast is constant.
+\item \textit{Note:} Mean pinball loss. RQC: pooled residual-quantile correction; ACI: adaptive conformal inference ($\gamma=0.05$); TSPC: two-scale panel calibration; TSPC-LS: TSPC with a cross-sectional scale. All corrections use the same 12 months of matured residuals. The lowest loss among the corrections is in bold.
 \end{tablenotes}
 \end{table*}

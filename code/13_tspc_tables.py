@@ -22,6 +22,14 @@ def f3(x):
     return "--" if pd.isna(x) else f"{x:.3f}"
 
 
+def with_aci(s):
+    """Take ACI from the fair evaluation, which also covers the constant empirical forecast."""
+    f = pd.read_csv(RESULTS / "fair_summary.csv")
+    f = f[(f.design == "full") & (f.method == "aci") & f.period.isin(["all", "stable", "break"])]
+    s = s[s.method != "aci"]
+    return pd.concat([s, f[s.columns.intersection(f.columns)]], ignore_index=True)
+
+
 def table_primary(s):
     s = s[(s.alpha == 0.9) & (s.horizon == 3)].set_index(["base", "period", "method"])["loss"]
     rows = []
@@ -47,7 +55,7 @@ def table_primary(s):
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} Mean pinball loss. RQC: pooled residual-quantile correction; ACI: adaptive conformal inference ($\gamma=0.05$); TSPC: two-scale panel calibration; TSPC-LS: TSPC with a cross-sectional scale. All corrections use the same 12 months of matured residuals. The lowest loss among the corrections is in bold. The empirical quantile has no ACI variant because its forecast is constant.
+\item \textit{Note:} Mean pinball loss. RQC: pooled residual-quantile correction; ACI: adaptive conformal inference ($\gamma=0.05$); TSPC: two-scale panel calibration; TSPC-LS: TSPC with a cross-sectional scale. All corrections use the same 12 months of matured residuals. The lowest loss among the corrections is in bold.
 \end{tablenotes}
 \end{table*}
 """
@@ -90,7 +98,7 @@ $\alpha$ & $h$ & \textbf{Wins} & \textbf{Stable} & \textbf{Break} & \textbf{All}
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} Ratios are mean pinball loss relative to RQC, averaged over base forecasts (seven for the primary design, which includes rolling refits, five otherwise); ACI ratios exclude the empirical quantile. Wins counts base forecasts for which TSPC has lower whole-sample loss than RQC. $\widehat\rho_h$ is the mean lag-$h$ autocorrelation of the monthly median residual, computed ex post over the full residual history.
+\item \textit{Note:} Ratios are mean pinball loss relative to RQC, averaged over base forecasts (seven for the primary design, which includes rolling refits, five otherwise); Wins counts base forecasts for which TSPC has lower whole-sample loss than RQC. $\widehat\rho_h$ is the mean lag-$h$ autocorrelation of the monthly median residual, computed ex post over the full residual history.
 \end{tablenotes}
 \end{table}
 """
@@ -187,7 +195,7 @@ def table_tests():
 
 def main():
     table_tests()
-    s = pd.read_csv(RESULTS / "tspc_summary.csv")
+    s = with_aci(pd.read_csv(RESULTS / "tspc_summary.csv"))
     table_primary(s)
     pers = pd.read_csv(RESULTS / "tspc_persistence.csv")
     table_designs(s, pers)
