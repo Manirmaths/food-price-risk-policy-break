@@ -105,7 +105,7 @@ def table_simulation(sim):
         n = 40 if sc == "idio" else 1600
         for i, h in enumerate([1, 3, 6]):
             x = sim[(sim.scenario == sc) & (sim.cells == n) & (sim.horizon == h)].set_index("method")
-            name = f"{labels[sc]} ($N={n:,}$)" if i == 0 else ""
+            name = f"{labels[sc]} ($N={n:,}$)".replace(",", "{,}") if i == 0 else ""
             rows.append(" & ".join([name, str(h), f"{x.loc['rqc', 'loss']:.2f}",
                                     *[f"{x.loc[m, 'ratio_rqc']:.2f}" for m in ["aci", "tspc", "tspc_ls", "tspc_ar"]],
                                     f"{x.loc['rqc', 'coverage']:.2f}", f"{x.loc['tspc', 'coverage']:.2f}"]) + r" \\")
