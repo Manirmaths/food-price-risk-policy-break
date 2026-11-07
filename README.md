@@ -2,9 +2,9 @@
 
 Code and results for the paper
 
-> Isa, G. A., Ibrahim, M., Alhassan, B., Danjuma, S. M. and Shehu, I. A. *Delayed calibration of panel quantile forecasts under structural change, with an application to Nigerian food prices.* Submitted to the *Journal of Applied Statistics*.
+> Isa, G. A., Ibrahim, M., Alhassan, B., Danjuma, S. M. and Shehu, I. A. *Delayed calibration of panel quantile forecasts after structural breaks: a pre-specified evaluation on food prices in six countries.* Submitted to the *Journal of Applied Statistics*.
 
-The paper studies corrections that keep panel quantile forecasts calibrated when forecast errors are observed only after the forecast horizon. It compares pooled, short-window, exponentially weighted, latest-cross-section and adaptive conformal corrections with two-scale panel calibration (TSPC), which takes the common level of the errors from the newest matured cross-section and their shape from a pooled window, and with TSPC variants that forecast the level and allow for its uncertainty. The comparison uses a simulation study and an application that forecasts upper quantiles of retail price growth for 43 foods in Nigeria's 36 states and the Federal Capital Territory, using the National Bureau of Statistics (NBS) Selected Food Price Watch from January 2017 to April 2024, across the 2023 removal of the petrol subsidy and unification of the exchange rate.
+The paper studies corrections that keep panel quantile forecasts calibrated when forecast errors are observed only after the forecast horizon. It compares pooled, short-window, exponentially weighted, latest-cross-section and adaptive conformal corrections with two-scale panel calibration (TSPC), which takes the common level of the errors from the newest matured cross-section and their shape from a pooled window, and with TSPC variants that forecast the level and allow for its uncertainty. The comparison uses a simulation study and an application that forecasts upper quantiles of retail price growth for 43 foods in Nigeria's 36 states and the Federal Capital Territory, using the National Bureau of Statistics (NBS) Selected Food Price Watch from January 2017 to April 2024, across the 2023 removal of the petrol subsidy and unification of the exchange rate. Because that sample shaped the corrections, they are then tested, under the protocol in `PROTOCOL.md` (fixed before the data were read), on World Bank Real-Time Food Prices market panels for Nigeria, Lebanon, Sudan, Haiti, Myanmar and Afghanistan.
 
 ## Design
 
@@ -25,7 +25,8 @@ The paper studies corrections that keep panel quantile forecasts calibrated when
 - Re-estimating the base model matters most: expanding-window refits lower the break-period loss of frozen forecasts by 51% to 65% (alpha = 0.90, h = 3).
 - After a calibration restart, any of the delayed corrections lowers break-period loss by about 30% relative to no correction, averaged over 47 combinations of base forecast and design.
 - With the full residual history, TSPC lowers loss by 10% relative to the 12-month RQC, but so does the latest-cross-section correction; after a restart, all corrections are within 3% of one another and rarely significantly different.
-- Full results: `results/fair_summary.csv`, `results/fair_tests.csv` and `results/simulation2.csv`.
+- Pre-specified evaluation (six countries, alpha = 0.90, h = 3): every correction has lower break-period loss than no correction in most of 18 country and base-forecast combinations (median reductions 10% to 18%). TSPC-U does not beat RQC after the breaks (10 of 18). Corrections that carry the latest common level forward are 7% to 9% worse than RQC, mainly before the breaks, where the common error was negatively autocorrelated in 17 of 21 cases. Exponentially weighted RQC is the most reliable correction.
+- Full results: `results/external/hypothesis_summary.csv`, `results/external/directional_tests.csv`, `results/fair_summary.csv`, `results/fair_tests.csv` and `results/simulation2.csv`.
 
 ## Data
 
@@ -40,6 +41,8 @@ The source files are public but are not redistributed here. Place them in `data/
 | `exchange_rate_monthly_2017_2026.csv` | Naira per US dollar, monthly |
 | `cpi_complete_1995_2026.csv` | NBS consumer price index, chain-linked |
 | `ACLED Data_2026-08-05_event_date_from_2017-03-01_event_date_to_2024-04-30.csv` | ACLED weekly state aggregates (appendix only) |
+
+For the pre-specified evaluation, unzip the RTFP market files (`<ISO>_RTFP_mkt_*/*.csv`, version 2026-11-02, World Bank Microdata Library) into `data/rtfp/`, or set `RTFP_DIR`.
 
 NBS stopped publishing state-level food price tables after April 2024; later releases report national and zonal averages only.
 
@@ -63,6 +66,9 @@ python code/13_tspc_tables.py        # earlier calibration tables
 python code/14_fair_evaluation.py    # fair comparison: full and restart residual histories, all corrections
 python code/15_simulation.py 400     # simulation study (pass "400 k 2" to run half k of the grid)
 python code/16_fair_tables.py        # tables for the fair comparison and the simulation
+python code/17_external.py NGA 0.90 3   # pre-specified evaluation; countries NGA, NGA_POST, LBN, SDN, HTI, MMR, AFG
+python code/18_external_tests.py         # hypotheses H1-H5 of PROTOCOL.md
+python code/19_external_tables.py        # tables and figure for the evaluation
 python code/11_simulation.py 500     # first simulation design (online supplement of an earlier version)
 ```
 

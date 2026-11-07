@@ -1,0 +1,7 @@
+country,base,rho_pre,tspc_wins,predicted,design
+NGA,empirical,-0.3207167475637594,True,False,a0.75_h3_loss
+NGA,linear_qr,-0.0645408984394278,True,False,a0.75_h3_loss
+NGA,hist_gb,-0.0246907504641458,True,False,a0.75_h3_loss
+LBN,empirical,-0.0309743874299477,True,False,a0.75_h3_loss
+LBN,linear_qr,-0.5570888295706286,True,False,a0.75_h3_loss
+LBN,hist_gb,-0.2970827278824993,True,False,a0.75_h3_loss

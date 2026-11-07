@@ -1,0 +1,106 @@
+design,hypothesis,comparison,favour,sign_p,holm_better,holm_worse,median_rel_diff
+primary,H1,rqc-none,16/18,0.001312255859375,0.0,0.0,-0.15692185997274136
+primary,H1,rqc3-none,13/18,0.09625244140625,0.0,0.0,-0.1811918630002876
+primary,H1,ewrqc-none,14/18,0.0308837890625,0.0,0.0,-0.18011905023329094
+primary,H1,lcs-none,13/18,0.09625244140625,0.0,0.0,-0.16266272147547273
+primary,H1,aci-none,12/18,0.237884521484375,0.0,0.0,-0.10211831756108711
+primary,H1,tspc-none,14/18,0.0308837890625,0.0,1.0,-0.13656276434513012
+primary,H1,tspc_ar-none,17/18,0.00014495849609375,0.0,0.0,-0.11022396474203827
+primary,H1,tspc_u-none,14/18,0.0308837890625,0.0,0.0,-0.16907638952567788
+primary,H1,tspc_aru-none,16/18,0.001312255859375,0.0,0.0,-0.15501593525515736
+primary,H2,tspc_u-rqc,10/18,0.8145294189453125,0.0,0.0,-0.011401428391839075
+primary,H3,tspc_aru-rqc,10/18,0.8145294189453125,0.0,0.0,-0.002729009677405072
+primary,H4,aci-rqc,2/21 equivalent,,,,0.027217252135697888
+primary,H4,ewrqc-rqc,8/21 equivalent,,,,-0.013739261004090944
+primary,H4,lcs-rqc,0/21 equivalent,,,,0.09095960844290407
+primary,H4,rqc3-rqc,0/21 equivalent,,,,0.050532336952920046
+primary,H4,tspc-rqc,1/21 equivalent,,,,0.07110465712804927
+primary,H4,tspc_u-rqc,0/21 equivalent,,,,0.03184800769075431
+primary,H5,rho_pre>0.5 predicts TSPC<RQC,"pred&win 0, pred&lose 1, nopred&win 4, nopred&lose 16",1.0,,,
+a0.9_h3_loss_rel,H1,rqc-none,16/18,0.001312255859375,0.0,0.0,-0.14014662775475745
+a0.9_h3_loss_rel,H1,rqc3-none,14/18,0.0308837890625,0.0,0.0,-0.16293908346199482
+a0.9_h3_loss_rel,H1,ewrqc-none,15/18,0.007537841796875,0.0,0.0,-0.16394924152251936
+a0.9_h3_loss_rel,H1,lcs-none,14/18,0.0308837890625,0.0,0.0,-0.1526831091998635
+a0.9_h3_loss_rel,H1,aci-none,13/18,0.09625244140625,0.0,0.0,-0.11562950361835757
+a0.9_h3_loss_rel,H1,tspc-none,14/18,0.0308837890625,0.0,0.0,-0.13532781875460437
+a0.9_h3_loss_rel,H1,tspc_ar-none,17/18,0.00014495849609375,0.0,0.0,-0.12027247790103934
+a0.9_h3_loss_rel,H1,tspc_u-none,14/18,0.0308837890625,0.0,0.0,-0.14124293103685026
+a0.9_h3_loss_rel,H1,tspc_aru-none,15/18,0.007537841796875,0.0,0.0,-0.15699164607052724
+a0.9_h3_loss_rel,H2,tspc_u-rqc,10/18,0.8145294189453125,0.0,0.0,-0.003939197828092118
+a0.9_h3_loss_rel,H3,tspc_aru-rqc,10/18,0.8145294189453125,0.0,0.0,-0.0010769867684333708
+a0.9_h3_loss_rel,H4,aci-rqc,3/21 equivalent,,,,0.027506995372035964
+a0.9_h3_loss_rel,H4,ewrqc-rqc,9/21 equivalent,,,,-0.016218279083405958
+a0.9_h3_loss_rel,H4,lcs-rqc,0/21 equivalent,,,,0.09697230710623689
+a0.9_h3_loss_rel,H4,rqc3-rqc,0/21 equivalent,,,,0.041240311791745664
+a0.9_h3_loss_rel,H4,tspc-rqc,0/21 equivalent,,,,0.06437224751758935
+a0.9_h3_loss_rel,H4,tspc_u-rqc,0/21 equivalent,,,,0.03992920076021699
+a0.75_h3_loss,H1,rqc-none,6/6,0.03125,0.0,0.0,-0.18199310479506278
+a0.75_h3_loss,H1,rqc3-none,6/6,0.03125,0.0,0.0,-0.25413755961996354
+a0.75_h3_loss,H1,ewrqc-none,6/6,0.03125,0.0,0.0,-0.2504403440777455
+a0.75_h3_loss,H1,lcs-none,6/6,0.03125,0.0,0.0,-0.2376832295860526
+a0.75_h3_loss,H1,aci-none,5/6,0.21875,0.0,0.0,-0.15697468124292324
+a0.75_h3_loss,H1,tspc-none,6/6,0.03125,0.0,0.0,-0.2324855756274436
+a0.75_h3_loss,H1,tspc_ar-none,6/6,0.03125,0.0,0.0,-0.19600961754600366
+a0.75_h3_loss,H1,tspc_u-none,6/6,0.03125,0.0,0.0,-0.23636255969719416
+a0.75_h3_loss,H1,tspc_aru-none,6/6,0.03125,0.0,0.0,-0.20988490587823283
+a0.75_h3_loss,H2,tspc_u-rqc,6/6,0.03125,0.0,0.0,-0.0487632006221154
+a0.75_h3_loss,H3,tspc_aru-rqc,1/6,0.21875,0.0,0.0,0.029385959261193133
+a0.75_h3_loss,H4,aci-rqc,1/6 equivalent,,,,0.017802240355957063
+a0.75_h3_loss,H4,ewrqc-rqc,0/6 equivalent,,,,-0.062250316553225896
+a0.75_h3_loss,H4,lcs-rqc,0/6 equivalent,,,,-0.0428284789871113
+a0.75_h3_loss,H4,rqc3-rqc,0/6 equivalent,,,,-0.05855821619771759
+a0.75_h3_loss,H4,tspc-rqc,0/6 equivalent,,,,-0.019606587937756714
+a0.75_h3_loss,H4,tspc_u-rqc,0/6 equivalent,,,,-0.02269995100929681
+a0.75_h3_loss,H5,rho_pre>0.5 predicts TSPC<RQC,"pred&win 0, pred&lose 0, nopred&win 6, nopred&lose 0",1.0,,,
+a0.75_h3_loss_rel,H1,rqc-none,6/6,0.03125,0.0,0.0,-0.1875692354030884
+a0.75_h3_loss_rel,H1,rqc3-none,6/6,0.03125,0.0,0.0,-0.2591439079109674
+a0.75_h3_loss_rel,H1,ewrqc-none,6/6,0.03125,0.0,0.0,-0.25539240809102304
+a0.75_h3_loss_rel,H1,lcs-none,6/6,0.03125,0.0,0.0,-0.2409854953195571
+a0.75_h3_loss_rel,H1,aci-none,5/6,0.21875,0.0,0.0,-0.16074746518504704
+a0.75_h3_loss_rel,H1,tspc-none,6/6,0.03125,0.0,0.0,-0.23479354930362584
+a0.75_h3_loss_rel,H1,tspc_ar-none,6/6,0.03125,0.0,0.0,-0.19671810577500956
+a0.75_h3_loss_rel,H1,tspc_u-none,6/6,0.03125,0.0,0.0,-0.24129299924035436
+a0.75_h3_loss_rel,H1,tspc_aru-none,6/6,0.03125,0.0,0.0,-0.21186166445637572
+a0.75_h3_loss_rel,H2,tspc_u-rqc,6/6,0.03125,0.0,0.0,-0.04584295983301431
+a0.75_h3_loss_rel,H3,tspc_aru-rqc,2/6,0.6875,0.0,0.0,0.020476551142027354
+a0.75_h3_loss_rel,H4,aci-rqc,0/6 equivalent,,,,0.02125499203461815
+a0.75_h3_loss_rel,H4,ewrqc-rqc,0/6 equivalent,,,,-0.06185354975207516
+a0.75_h3_loss_rel,H4,lcs-rqc,0/6 equivalent,,,,-0.038856315797947336
+a0.75_h3_loss_rel,H4,rqc3-rqc,0/6 equivalent,,,,-0.057602922622159214
+a0.75_h3_loss_rel,H4,tspc-rqc,0/6 equivalent,,,,-0.018864288893838413
+a0.75_h3_loss_rel,H4,tspc_u-rqc,0/6 equivalent,,,,-0.02170346785086606
+a0.95_h3_loss,H1,rqc-none,3/3,0.25,0.0,0.0,-0.43060756051798915
+a0.95_h3_loss,H1,rqc3-none,3/3,0.25,0.0,0.0,-0.4532973490739852
+a0.95_h3_loss,H1,ewrqc-none,3/3,0.25,0.0,0.0,-0.4637910454738794
+a0.95_h3_loss,H1,lcs-none,3/3,0.25,0.0,0.0,-0.4240377165137825
+a0.95_h3_loss,H1,aci-none,3/3,0.25,0.0,0.0,-0.4843756574507197
+a0.95_h3_loss,H1,tspc-none,3/3,0.25,0.0,0.0,-0.39524752264381063
+a0.95_h3_loss,H1,tspc_ar-none,3/3,0.25,1.0,0.0,-0.27041741416009096
+a0.95_h3_loss,H1,tspc_u-none,3/3,0.25,0.0,0.0,-0.4769388790939079
+a0.95_h3_loss,H1,tspc_aru-none,3/3,0.25,1.0,0.0,-0.3471146514693051
+a0.95_h3_loss,H2,tspc_u-rqc,3/3,0.25,0.0,0.0,-0.061327484383118844
+a0.95_h3_loss,H3,tspc_aru-rqc,0/3,0.25,0.0,0.0,0.05614973539700573
+a0.95_h3_loss,H4,aci-rqc,0/3 equivalent,,,,-0.0574712231843306
+a0.95_h3_loss,H4,ewrqc-rqc,0/3 equivalent,,,,-0.03692208693644615
+a0.95_h3_loss,H4,lcs-rqc,0/3 equivalent,,,,0.1556370873287451
+a0.95_h3_loss,H4,rqc3-rqc,0/3 equivalent,,,,0.01828374151082762
+a0.95_h3_loss,H4,tspc-rqc,0/3 equivalent,,,,0.21222179730235213
+a0.95_h3_loss,H4,tspc_u-rqc,0/3 equivalent,,,,0.014045909800484866
+a0.95_h3_loss,H5,rho_pre>0.5 predicts TSPC<RQC,"pred&win 0, pred&lose 0, nopred&win 0, nopred&lose 3",1.0,,,
+a0.95_h3_loss_rel,H1,rqc-none,3/3,0.25,0.0,0.0,-0.4316473149090745
+a0.95_h3_loss_rel,H1,rqc3-none,3/3,0.25,0.0,0.0,-0.4570791988439707
+a0.95_h3_loss_rel,H1,ewrqc-none,3/3,0.25,0.0,0.0,-0.46404028293906757
+a0.95_h3_loss_rel,H1,lcs-none,3/3,0.25,0.0,0.0,-0.4254455853752581
+a0.95_h3_loss_rel,H1,aci-none,3/3,0.25,0.0,0.0,-0.4857881134702136
+a0.95_h3_loss_rel,H1,tspc-none,3/3,0.25,0.0,0.0,-0.3972972971345249
+a0.95_h3_loss_rel,H1,tspc_ar-none,3/3,0.25,1.0,0.0,-0.27438899473447254
+a0.95_h3_loss_rel,H1,tspc_u-none,3/3,0.25,0.0,0.0,-0.4754229543491686
+a0.95_h3_loss_rel,H1,tspc_aru-none,3/3,0.25,1.0,0.0,-0.34899894491441313
+a0.95_h3_loss_rel,H2,tspc_u-rqc,3/3,0.25,0.0,0.0,-0.05964418246007057
+a0.95_h3_loss_rel,H3,tspc_aru-rqc,0/3,0.25,0.0,0.0,0.04409350494436674
+a0.95_h3_loss_rel,H4,aci-rqc,0/3 equivalent,,,,-0.05498717582569479
+a0.95_h3_loss_rel,H4,ewrqc-rqc,0/3 equivalent,,,,-0.037634999103688734
+a0.95_h3_loss_rel,H4,lcs-rqc,0/3 equivalent,,,,0.15436511087904273
+a0.95_h3_loss_rel,H4,rqc3-rqc,0/3 equivalent,,,,0.014765665757032037
+a0.95_h3_loss_rel,H4,tspc-rqc,0/3 equivalent,,,,0.20419328618352842
+a0.95_h3_loss_rel,H4,tspc_u-rqc,0/3 equivalent,,,,0.008018492098805447
