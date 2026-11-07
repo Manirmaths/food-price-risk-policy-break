@@ -116,3 +116,4 @@ labelled as exploratory.
 ## Amendments
 
 1. 7 November 2026, before any data were read (administrative only). The tag `protocol-v1` could not be pushed from the analysis environment. The protocol is instead identified by commit `17be5e3`, recorded by GitHub at 2026-11-07 13:45:30 UTC. Nothing in sections 1-8 changed.
+2. 7 November 2026, before any results were examined (technical). Myanmar has 301 markets, more than the 255 categories that the boosting learner's native categorical splits allow, so the run failed. For Myanmar only, the boosting learner uses the first-level administrative region in place of the market identifier; the empirical and linear quantile regression forecasts are unchanged.
