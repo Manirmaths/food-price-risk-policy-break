@@ -115,7 +115,8 @@ def simulation():
             cells = [("\\textbf{" + f(v, 2) + "}") if m == best else f(v, 2) for m, v in vals.items()]
             rows.append(" & ".join([lab[sc] if i == 0 else "", str(h), f(x.loc["rqc", "loss"], 2), f(x.loc["none", "ratio_rqc"], 2)] + cells) + r" \\")
         rows.append(r"\addlinespace")
-    se = sim[sim.method != "rqc"].ratio_se.max()
+    se = sim[~sim.method.isin(["rqc", "none"])].ratio_se.max()
+    se_none = sim[sim.method == "none"].ratio_se.max()
     tex = r"""\begin{table*}[t]
 \caption{Simulation: mean pinball loss relative to the 12-month RQC.\label{tab:sim}}
 \centering\footnotesize\setlength{\tabcolsep}{3pt}
@@ -129,7 +130,7 @@ def simulation():
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} Means over 400 replications of a $37\times43$ panel; ratios are computed within each replication. The largest Monte Carlo standard error of a ratio is """ + f(se, 3) + r""". RQC-3: three-month RQC; EW: exponentially weighted RQC; LCS: latest cross-section. The lowest ratio among the corrections is in bold.
+\item \textit{Note:} Means over 400 replications of a $37\times43$ panel; ratios are computed within each replication. The largest Monte Carlo standard error of a ratio is """ + f(se, 3) + r""" for the corrections and """ + f(se_none, 3) + r""" for no correction. RQC-3: three-month RQC; EW: exponentially weighted RQC; LCS: latest cross-section. The lowest ratio among the corrections is in bold.
 \end{tablenotes}
 \end{table*}
 """

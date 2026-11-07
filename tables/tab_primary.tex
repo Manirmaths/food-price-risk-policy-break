@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\caption{Corrections after a calibration restart, $\alpha=0.90$, $h=3$.\label{tab:primary}}
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lrrrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Linear QR, exp.}} & \multicolumn{2}{c}{\textbf{Boosting, exp.}} & \multicolumn{2}{c}{\textbf{Linear QR, frozen}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
+\textbf{Correction} & \textbf{Stable} & \textbf{Break} & \textbf{Stable} & \textbf{Break} & \textbf{Stable} & \textbf{Break} \\
+\midrule
+No correction & 2.123 & 3.936 & 2.052 & 6.088 & 2.450 & 11.360 \\
+\addlinespace
+RQC, 12 months & \textbf{2.185} & 3.734 & 1.941 & 4.335 & \textbf{2.113} & 5.349 \\
+RQC, 3 months & 2.250 & 4.376 & 1.987 & 4.218 & 2.219 & 4.886 \\
+RQC, exp.\ weighted & 2.204 & 3.903 & 1.940 & \textbf{4.121} & 2.163 & 4.820 \\
+Latest cross-section & 2.244 & 4.628 & 2.014 & 4.232 & 2.186 & 5.081 \\
+ACI & 2.268 & 3.860 & 1.984 & 4.240 & 2.199 & \textbf{3.988} \\
+\addlinespace
+TSPC & 2.255 & 4.408 & 1.960 & 4.270 & 2.133 & 5.987 \\
+TSPC-AR & 2.201 & 3.718 & \textbf{1.937} & 4.497 & 2.124 & 6.583 \\
+TSPC-U & 2.355 & 4.112 & 1.974 & 4.139 & 2.241 & 5.096 \\
+TSPC-ARU & 2.217 & \textbf{3.629} & 1.947 & 4.375 & 2.126 & 6.130 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Mean pinball loss. Calibration restarts in January 2021, when the evaluation forecasters are installed, so only residuals of forecasts issued from then on are used; no correction is applied before the first of them matures. Expanding (exp.) models are re-estimated monthly. The lowest loss among the corrections is in bold.
+\end{tablenotes}
+\end{table*}

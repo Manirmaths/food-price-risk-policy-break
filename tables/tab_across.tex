@@ -1,0 +1,25 @@
+\begin{table}[t]
+\caption{Loss relative to the 12-month RQC, averaged over 47 combinations of base forecast and design.\label{tab:across}}
+\centering\footnotesize\setlength{\tabcolsep}{2.5pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}l rrrrr rr@{}}
+\toprule
+ & \textbf{Full} & \multicolumn{4}{c}{\textbf{Restart}} & & \\
+\cmidrule(lr){2-2}\cmidrule(lr){3-6}
+\textbf{Correction} & \textbf{All} & \textbf{All} & \textbf{Stable} & \textbf{Break} & \textbf{Clean} & \textbf{$>$None} & \textbf{Sig.} \\
+\midrule
+No correction & 1.23 & 1.39 & 1.13 & 1.62 & 1.52 & -- & -- \\
+RQC, 12 months & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 44 & -- \\
+RQC, 3 months & 0.92 & 0.98 & 1.02 & 0.96 & 0.98 & 38 & 0/0 \\
+RQC, exp.\ weighted & 0.96 & 0.97 & 1.00 & 0.95 & 0.96 & 42 & 1/0 \\
+Latest cross-section & 0.90 & 0.99 & 1.03 & 0.96 & 0.98 & 37 & 0/4 \\
+ACI & 0.98 & 0.98 & 1.04 & 0.93 & 0.95 & 39 & 0/1 \\
+TSPC & 0.90 & 1.00 & 1.01 & 0.99 & 0.99 & 36 & 0/1 \\
+TSPC-AR & 0.93 & 1.01 & 1.00 & 1.01 & 1.01 & 44 & 1/0 \\
+TSPC-U & 0.98 & 0.98 & 1.02 & 0.94 & 0.96 & 38 & 0/2 \\
+TSPC-ARU & 1.03 & 0.99 & 1.00 & 0.99 & 0.99 & 46 & 1/0 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}
+\item \textit{Note:} Full: residual history includes the pre-evaluation forecasts; Restart: only residuals of forecasts issued from January 2021. Clean: origins from March 2022 (for $h=3$), whose 12-month window contains no pre-evaluation residual. $>$None: combinations, of 47, in which the correction has lower whole-sample loss than no correction (restart). Sig.: combinations in which the correction is significantly better/worse than RQC under the fixed-smoothing test at 5\% (restart, whole sample).
+\end{tablenotes}
+\end{table}

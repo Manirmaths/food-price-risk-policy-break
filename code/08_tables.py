@@ -35,10 +35,12 @@ def summary(tag="a90_h3"):
 
 def table_descriptive():
     f = pd.read_csv(BUILD / "forecasts_a90_h3.csv.gz", parse_dates=["date", "target_date"])
+    panel = pd.read_csv(BUILD / "panel.csv.gz", parse_dates=["date"])
     rows = []
     for period, label in [("stable", "Stable targets (Apr 2021--May 2023)"), ("break", "Break targets (Jun 2023--Apr 2024)")]:
         g = f[f["period"].eq(period)]
         y = g["y"]
+        macro = panel[panel["date"].isin(g["target_date"].unique())]
         rows.append([label, f"{len(g):,}", f2(y.mean()), f2(y.std()), f2(y.quantile(0.5)), f2(y.quantile(0.9)),
                      f2(100 * np.mean(y > 20)), f2(g.groupby("date")["y"].quantile(0.9).std())])
     body = "\n".join(" & ".join(r) + r" \\" for r in rows)
@@ -95,7 +97,7 @@ def table_main():
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} Loss is the mean pinball loss at $\alpha=0.90$; coverage is the share of outcomes at or below the forecast (nominal 0.90). There are 41,363 stable and 17,501 break forecasts. RQC is the residual-quantile correction with a 12-month window; ACI is adaptive conformal inference on the same window with $\gamma=0.05$. Every refit and correction uses only targets that had matured by the forecast origin. The lowest break-period loss is in bold.
+\item \textit{Note:} Loss is the mean pinball loss at $\alpha=0.90$; coverage is the share of outcomes at or below the forecast (nominal 0.90). There are 41,363 stable and 17,501 break forecasts. RQC is the residual-quantile correction with a 12-month window; ACI is adaptive conformal inference on the same window with $\gamma=0.05$. Every refit and correction uses only targets that had matured by the forecast origin, except that the residual history of the frozen models starts with pre-evaluation forecasts from a fit to December 2019 (Section~\ref{sec:data}). The lowest break-period loss is in bold.
 \end{tablenotes}
 \end{table*}
 """

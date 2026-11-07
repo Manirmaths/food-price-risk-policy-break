@@ -36,6 +36,6 @@ Rolling (24 months) & None & 2.083 & 0.788 & 6.155 & 0.539 \\
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} Loss is the mean pinball loss at $\alpha=0.90$; coverage is the share of outcomes at or below the forecast (nominal 0.90). There are 41,363 stable and 17,501 break forecasts. RQC is the residual-quantile correction with a 12-month window; ACI is adaptive conformal inference on the same window with $\gamma=0.05$. Every refit and correction uses only targets that had matured by the forecast origin. The lowest break-period loss is in bold.
+\item \textit{Note:} Loss is the mean pinball loss at $\alpha=0.90$; coverage is the share of outcomes at or below the forecast (nominal 0.90). There are 41,363 stable and 17,501 break forecasts. RQC is the residual-quantile correction with a 12-month window; ACI is adaptive conformal inference on the same window with $\gamma=0.05$. Every refit and correction uses only targets that had matured by the forecast origin, except that the residual history of the frozen models starts with pre-evaluation forecasts from a fit to December 2019 (Section~\ref{sec:data}). The lowest break-period loss is in bold.
 \end{tablenotes}
 \end{table*}
