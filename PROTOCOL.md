@@ -115,4 +115,4 @@ labelled as exploratory.
 
 ## Amendments
 
-None.
+1. 7 November 2026, before any data were read (administrative only). The tag `protocol-v1` could not be pushed from the analysis environment. The protocol is instead identified by commit `17be5e3`, recorded by GitHub at 2026-11-07 13:45:30 UTC. Nothing in sections 1-8 changed.
