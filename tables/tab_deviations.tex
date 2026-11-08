@@ -1,0 +1,22 @@
+\begin{table}[t]
+\caption{The protocol and what was done.\label{tab:deviations}}
+\centering\footnotesize
+\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}p{0.17\columnwidth}p{0.45\columnwidth}p{0.3\columnwidth}@{}}
+\toprule
+\textbf{Item} & \textbf{Protocol} & \textbf{As carried out} \\
+\midrule
+Data & RTFP version of 2 November 2026, six countries, closing price estimate & As specified \\
+Windows & Event-based breaks; 24 stable and 24 break target months; Nigeria from May 2024 & As specified \\
+Base forecasts & Empirical, linear QR and boosting, refitted every 3 months & As specified, except Amendment 2 \\
+Corrections & The ten of the development code, same constants & As specified \\
+Tests & H1--H5; fixed-smoothing tests, Holm, sign and Fisher tests & As specified; all results reported \\
+Reliability & Both prices at or above the median reliability score & As specified \\
+Secondary designs & $\alpha\in\{0.75,0.95\}$ at $h=3$; $h\in\{1,6\}$ at $\alpha=0.90$ & Primary-design tests applied to each \\
+\addlinespace
+Amendment 1 & 7 November 2026, before the data were read: protocol identified by its commit, as the tag could not be pushed & Administrative \\
+Amendment 2 & 7 November 2026, before any result was seen: for Myanmar's 301 markets, boosting uses the region in place of the market & Technical \\
+\addlinespace
+Added later & Country-level tests, power, observed-price subset, break-detection corrections & Not in the protocol; reported as exploratory \\
+\bottomrule
+\end{tabular*}
+\end{table}

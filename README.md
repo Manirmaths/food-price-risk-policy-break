@@ -25,7 +25,8 @@ The paper studies corrections that keep panel quantile forecasts calibrated when
 - Re-estimating the base model matters most: expanding-window refits lower the break-period loss of frozen forecasts by 51% to 65% (alpha = 0.90, h = 3).
 - After a calibration restart, any of the delayed corrections lowers break-period loss by about 30% relative to no correction, averaged over 47 combinations of base forecast and design.
 - With the full residual history, TSPC lowers loss by 10% relative to the 12-month RQC, but so does the latest-cross-section correction; after a restart, all corrections are within 3% of one another and rarely significantly different.
-- Pre-specified evaluation (six countries, alpha = 0.90, h = 3): every correction has lower break-period loss than no correction in most of 18 country and base-forecast combinations (median reductions 10% to 18%). TSPC-U does not beat RQC after the breaks (10 of 18). Corrections that carry the latest common level forward are 7% to 9% worse than RQC, mainly before the breaks, where the common error was negatively autocorrelated in 17 of 21 cases. Exponentially weighted RQC is the most reliable correction. The four secondary designs (alpha = 0.75 and 0.95 at h = 3; h = 1 and 6 at alpha = 0.90) give the same conclusions.
+- Pre-specified evaluation (six countries, alpha = 0.90, h = 3): every correction has lower break-period loss than no correction in most of 18 country and base-forecast combinations (median reductions 10% to 18%). TSPC-U does not beat RQC after the breaks (10 of 18). Corrections that carry the latest common level forward are 7% to 9% worse than RQC, mainly before the breaks, where the common error was negatively autocorrelated in 17 of 21 cases. Exponentially weighted RQC is the most reliable correction. At the country level, RQC, exponentially weighted RQC, TSPC-AR, TSPC-U and TSPC-ARU lowered break-period loss in all six countries (loss ratios 0.80 to 0.85). The four secondary designs (alpha = 0.75 and 0.95 at h = 3; h = 1 and 6 at alpha = 0.90) give the same conclusions.
+- Exploratory analyses, added after the results were seen and outside the protocol: the conclusions hold on prices observed in the field (14% to 54% of evaluated targets), and a correction that shortens its window after a CUSUM alarm is level with RQC over the whole window (country-level ratio 1.01). Results: `results/external/clustered_tests.csv`, `power.csv`, `extra_country.csv` and `<COUNTRY>_a90_h3_extra.csv`.
 - Full results: `results/external/hypothesis_summary.csv`, `results/external/directional_tests.csv`, `results/fair_summary.csv`, `results/fair_tests.csv` and `results/simulation2.csv`.
 
 ## Data
@@ -69,6 +70,9 @@ python code/16_fair_tables.py        # tables for the fair comparison and the si
 python code/17_external.py NGA 0.90 3   # pre-specified evaluation; countries NGA, NGA_POST, LBN, SDN, HTI, MMR, AFG
 python code/18_external_tests.py         # hypotheses H1-H5 of PROTOCOL.md
 python code/19_external_tables.py        # tables and figure for the evaluation
+python code/20_extra.py NGA 0.90 3       # exploratory (outside the protocol): observed-price subset and break-detection corrections
+python code/21_clustered.py              # exploratory: country-level tests and power of the per-combination tests
+python code/22_extra_summary.py          # exploratory: summaries of 20_extra.py
 python code/11_simulation.py 500     # first simulation design (online supplement of an earlier version)
 ```
 

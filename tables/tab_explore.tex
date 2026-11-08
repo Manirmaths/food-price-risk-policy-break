@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\caption{Exploratory analyses (outside the protocol): country-level loss relative to the 12-month RQC, $\alpha=0.90$, $h=3$.\label{tab:explore}}
+\centering\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}l rrl rrl@{}}
+\toprule
+ & \multicolumn{3}{c}{\textbf{All targets}} & \multicolumn{3}{c}{\textbf{Observed prices only}} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+\textbf{Correction} & \textbf{Stable} & \textbf{Break} & \textbf{Whole [90\% CI]} & \textbf{Stable} & \textbf{Break} & \textbf{Whole [90\% CI]} \\
+\midrule
+No correction & 1.04 & 1.23 & 1.14 [1.02, 1.29] & 1.04 & 1.26 & 1.16 [1.04, 1.31] \\
+RQC, exp.\ weighted & 0.99 & 0.98 & 0.99 [0.97, 1.00] & 0.99 & 0.99 & 0.99 [0.96, 1.01] \\
+Latest cross-section & 1.19 & 1.05 & 1.09 [1.01, 1.16] & 1.13 & 1.06 & 1.08 [1.03, 1.14] \\
+TSPC & 1.17 & 1.03 & 1.08 [1.02, 1.14] & 1.12 & 1.04 & 1.07 [1.03, 1.11] \\
+Break switch, RQC & 1.05 & 0.99 & 1.01 [0.98, 1.05] & 1.05 & 0.99 & 1.01 [0.97, 1.05] \\
+Break switch, exp.\ weighted & 1.05 & 1.00 & 1.01 [0.97, 1.05] & 1.04 & 1.00 & 1.01 [0.97, 1.06] \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}\footnotesize
+\item \emph{Note:} Geometric means over countries of the mean over base forecasts of the loss ratio to RQC; Stable and Break cover the six break panels, Whole adds Nigeria from May 2024, with Student-$t$ intervals. Observed prices only: targets whose two prices were collected in the field rather than estimated by the RTFP model. Break switch: RQC (or its exponentially weighted version) whose window is cut back to the errors matured since the latest alarm of a two-sided CUSUM on the monthly median error ($k=0.5$, $H=4$), chosen before it was run.
+\end{tablenotes}
+\end{table*}

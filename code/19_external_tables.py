@@ -60,7 +60,7 @@ def panels():
         rows.append(f"{CNAME[c]} & {ev} & {bt} & {MARKETS[c]} & {FOODS[c]} & {int(x.n.median()):,} & "
                     f"{span} & {num(rho.min())}, {num(rho.max())} \\\\")
     tex = r"""\begin{table*}[t]
-\caption{Panels of the confirmatory evaluation (World Bank RTFP, version of 2 November 2026).\label{tab:extpanels}}
+\caption{Panels of the pre-specified evaluation (World Bank RTFP, version of 2 November 2026).\label{tab:extpanels}}
 \centering\footnotesize\setlength{\tabcolsep}{3pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep\fill}lllrrrlr@{}}
 \toprule
@@ -77,6 +77,13 @@ def panels():
     (OUT / "tab_extpanels.tex").write_text(tex)
 
 
+def clustered(comp):
+    c = pd.read_csv(EXT / "clustered_tests.csv")
+    r = c[(c.alpha == 0.90) & (c.h == 3) & (c.targets == "loss") & (c.comparison == comp)].iloc[0]
+    return (f"{r.favour} & {fmt_p(r.sign_p)} & "
+            f"{r.ratio:.2f} [{r.t90_lo:.2f}, {r.t90_hi:.2f}]")
+
+
 def hypotheses(label="primary"):
     s = pd.read_csv(EXT / "hypothesis_summary.csv")
     s = s[s.design == label]
@@ -84,18 +91,18 @@ def hypotheses(label="primary"):
     h1 = s[s.hypothesis == "H1"]
     for _, r in h1.iterrows():
         k = r.comparison.split("-")[0]
-        lines.append(f"H1 & {LABEL[k]} vs none & {r.favour.replace('/', ' of ')} & {fmt_p(r.sign_p)} & "
-                     f"{int(r.holm_better)}/{int(r.holm_worse)} & {100 * r.median_rel_diff:+.1f} \\\\")
+        lines.append(f"H1 & {LABEL[k]} vs none & {r.favour} & {fmt_p(r.sign_p)} & "
+                     f"{int(r.holm_better)}/{int(r.holm_worse)} & {100 * r.median_rel_diff:+.1f} & {clustered(r.comparison)} \\\\")
     lines.append(r"\addlinespace")
     for hyp, txt in [("H2", "TSPC-U vs RQC, break"), ("H3", "TSPC-ARU vs RQC, stable")]:
         r = s[s.hypothesis == hyp].iloc[0]
-        lines.append(f"{hyp} & {txt} & {r.favour.replace('/', ' of ')} & {fmt_p(r.sign_p)} & "
-                     f"{int(r.holm_better)}/{int(r.holm_worse)} & {100 * r.median_rel_diff:+.1f} \\\\")
+        lines.append(f"{hyp} & {txt} & {r.favour} & {fmt_p(r.sign_p)} & "
+                     f"{int(r.holm_better)}/{int(r.holm_worse)} & {100 * r.median_rel_diff:+.1f} & {clustered(r.comparison)} \\\\")
     lines.append(r"\addlinespace")
     for k in ["rqc3", "ewrqc", "lcs", "aci", "tspc", "tspc_u"]:
         r = s[(s.hypothesis == "H4") & (s.comparison == f"{k}-rqc")].iloc[0]
-        n = r.favour.split()[0].replace("/", " of ")
-        lines.append(f"H4 & {LABEL[k]} vs RQC & {n} & -- & -- & {100 * r.median_rel_diff:+.1f} \\\\")
+        n = r.favour.split()[0]
+        lines.append(f"H4 & {LABEL[k]} vs RQC & {n} & -- & -- & {100 * r.median_rel_diff:+.1f} & {clustered(r.comparison)} \\\\")
     h5 = s[s.hypothesis == "H5"].iloc[0]
     t5 = pd.read_csv(EXT / "persistence_primary.csv")
     hi = t5[t5.rho_pre > 0.5]
@@ -105,15 +112,17 @@ def hypotheses(label="primary"):
     tex = r"""\begin{table}[t]
 \caption{Pre-specified hypotheses, $\alpha=0.90$, $h=3$.\label{tab:exthyp}}
 \centering\footnotesize\setlength{\tabcolsep}{2pt}
-\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}llrrrr@{}}
+\begin{tabular*}{\columnwidth}{@{\extracolsep\fill}llrrrrrrr@{}}
 \toprule
- & \textbf{Comparison} & \textbf{Favourable} & \textbf{Sign $p$} & \textbf{Holm} & \textbf{\%} \\
+ & & \multicolumn{4}{c}{\textbf{Combinations}} & \multicolumn{3}{c}{\textbf{Countries}} \\
+\cmidrule(lr){3-6}\cmidrule(l){7-9}
+ & \textbf{Comparison} & \textbf{Fav.} & \textbf{Sign $p$} & \textbf{Holm} & \textbf{\%} & \textbf{Fav.} & \textbf{Sign $p$} & \textbf{Ratio [90\% CI]} \\
 \midrule
 """ + "\n".join(lines) + r"""
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} H1--H3: country--base combinations, of 18, in which the first forecast has the lower mean loss; exact two-sided sign test; combinations significantly better/worse at 5\% under the fixed-smoothing test after Holm's correction across the 18; median over combinations of the mean loss difference in per cent of the second forecast's loss. H4: combinations, of 21 (including Nigeria 2024--26), in which the 90\% confidence interval of the relative difference over the whole window lies inside $\pm5\%$, and the median relative difference. H5: """ + \
+\item \textit{Note:} H1--H3: country--base combinations, of 18, in which the first forecast has the lower mean loss; exact two-sided sign test; combinations significantly better/worse at 5\% under the fixed-smoothing test after Holm's correction across the 18; median over combinations of the mean loss difference in per cent of the second forecast's loss. H4: combinations, of 21 (including Nigeria 2024--26), in which the 90\% confidence interval of the relative difference over the whole window lies inside $\pm5\%$, and the median relative difference. Countries: each country contributes the mean over base forecasts of the log loss ratio (6 countries for H1--H3, 7 for H4, counting Nigeria 2024--26 separately); countries favourable to the first forecast, exact sign test, and the geometric-mean loss ratio with a Student-$t$ interval with countries $-1$ degrees of freedom. H5: """ + \
         f"{h5txt}; Fisher's exact $p={h5.sign_p:.2f}$." + r"""
 \end{tablenotes}
 \end{table}
@@ -148,7 +157,7 @@ def by_country():
             lines.append(r"\addlinespace")
     head = " & ".join(r"\textbf{" + c.replace("NGA_POST", "NGA$^\\ast$") + "}" for c in COUNTRIES)
     tex = r"""\begin{table*}[t]
-\caption{Loss relative to the 12-month RQC in the confirmatory evaluation, $\alpha=0.90$, $h=3$.\label{tab:extcountry}}
+\caption{Loss relative to the 12-month RQC in the pre-specified evaluation, $\alpha=0.90$, $h=3$.\label{tab:extcountry}}
 \centering\footnotesize\setlength{\tabcolsep}{3pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep\fill}l rrrrrrr rr@{}}
 \toprule
