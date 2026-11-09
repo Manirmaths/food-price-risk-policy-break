@@ -3,10 +3,26 @@
   "upload_type": "software",
   "description": "Replication code, the pre-specified evaluation protocol and derived results for the paper submitted to the Journal of Applied Statistics. The source data (NBS Selected Food Price Watch, World Bank Real-Time Food Prices, ACLED) are public and are not redistributed; the README explains how to obtain them.",
   "creators": [
-    {"name": "Shehu, Ibrahim Abdullahi", "affiliation": "Umaru Ali Shinkafi Polytechnic, Sokoto, Nigeria"},
-    {"name": "Isa, Garba Abor", "affiliation": "Usmanu Danfodiyo University, Sokoto, Nigeria"},
-    {"name": "Ibrahim, Maniru", "affiliation": "University of Limerick, Ireland"}
+    {
+      "name": "Ibrahim, Maniru",
+      "affiliation": "University of Limerick, Ireland"
+    },
+    {
+      "name": "Shehu, Ibrahim Abdullahi",
+      "affiliation": "Umaru Ali Shinkafi Polytechnic, Sokoto, Nigeria"
+    },
+    {
+      "name": "Isa, Garba Abor",
+      "affiliation": "Usmanu Danfodiyo University, Sokoto, Nigeria"
+    }
   ],
   "license": "MIT",
-  "keywords": ["quantile forecasting", "calibration", "structural breaks", "panel data", "food prices", "pre-registration"]
+  "keywords": [
+    "quantile forecasting",
+    "calibration",
+    "structural breaks",
+    "panel data",
+    "food prices",
+    "pre-registration"
+  ]
 }
