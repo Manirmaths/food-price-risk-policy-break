@@ -23,7 +23,7 @@ def f3(x):
 
 
 def with_aci(s):
-    """Take ACI from the fair evaluation, which also covers the constant empirical forecast."""
+    """Take ACI from 14_fair_evaluation.py, which also covers the constant empirical forecast."""
     f = pd.read_csv(RESULTS / "fair_summary.csv")
     f = f[(f.design == "full") & (f.method == "aci") & f.period.isin(["all", "stable", "break"])]
     s = s[s.method != "aci"]

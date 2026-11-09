@@ -1,4 +1,4 @@
-"""Country-level inference and power for the pre-specified evaluation (added after review planning).
+"""Country-level inference and power for the pre-specified evaluation (exploratory, not in the protocol).
 
 The 18 country and base-forecast combinations share shocks within a country, so the
 pooled sign test over combinations overstates the evidence. Here each country contributes

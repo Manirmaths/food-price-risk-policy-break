@@ -1,4 +1,4 @@
-"""LaTeX tables for the fair evaluation (14_fair_evaluation.py) and the simulation (15_simulation.py)."""
+"""LaTeX tables for the comparison of corrections (14_fair_evaluation.py) and the simulation (15_simulation.py)."""
 from __future__ import annotations
 
 from pathlib import Path

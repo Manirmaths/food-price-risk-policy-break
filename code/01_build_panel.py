@@ -71,8 +71,8 @@ def load_prices() -> pd.DataFrame:
             f"{len(states)} states x {len(items)} items x {len(dates)} months"
         )
 
-    # Use the full grid while constructing lags.  This prevents a missing month
-    # from silently turning a row lag into a non-calendar lag.
+    # Lags are taken on the full calendar grid, so a missing month does not turn
+    # a row lag into a non-calendar lag.
     grid = pd.MultiIndex.from_product(
         [states, items, dates], names=["state", "item", "date"]
     ).to_frame(index=False)

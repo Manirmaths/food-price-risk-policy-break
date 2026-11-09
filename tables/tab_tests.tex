@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \caption{Month-level tests of equal predictive accuracy.\label{tab:tests}}
-\centering\footnotesize
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep\fill}lrcrcccc@{}}
 \toprule
  & \multicolumn{2}{c}{\textbf{Stable (26 months)}} & \multicolumn{5}{c}{\textbf{Break (11 months)}} \\
@@ -23,6 +23,6 @@ Expanding boosting $-$ expanding linear QR & -0.071 & [-0.35, 0.21] & 2.152 & [0
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}
-\item \textit{Note:} Each row is the mean over origin months of the first model's mean pinball loss minus the second model's; negative values favour the first model. Intervals use Newey--West standard errors with two lags and Student-$t$ critical values. $p_{\mathrm{NW}}$: Newey--West; $p_{\mathrm{HLN}}$: Diebold--Mariano with the \citet{harvey1997} correction; $p_{\mathrm{EWC}}$: fixed-smoothing test with the equal-weighted cosine variance estimator and $B=\lfloor T^{1/2}\rfloor$ \citep{lazarus2018,coroneo2020}.
+\item \textit{Note:} Each row is the mean over origin months of the first model's mean pinball loss minus the second model's; negative values favour the first model. Intervals use Newey--West standard errors with two lags and Student-$t$ critical values. $p_{\mathrm{NW}}$: Newey--West; $p_{\mathrm{HLN}}$: Diebold--Mariano with the Harvey et al. correction \citep{harvey1997}; $p_{\mathrm{EWC}}$: fixed-smoothing test with the equal-weighted cosine variance estimator and $B=\lfloor T^{1/2}\rfloor$ \citep{lazarus2018,coroneo2020}.
 \end{tablenotes}
 \end{table*}

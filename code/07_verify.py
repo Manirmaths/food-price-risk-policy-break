@@ -1,4 +1,4 @@
-"""Fail-fast integrity checks for the panel, forecast timing and reported results."""
+"""Checks of the panel, the forecast timing and the reported results."""
 from __future__ import annotations
 
 import glob

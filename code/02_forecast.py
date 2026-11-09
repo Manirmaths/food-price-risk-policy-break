@@ -19,7 +19,7 @@ Each base forecast then receives two feasible delayed corrections:
 
 Only residuals whose target date is no later than the forecast origin are ever
 used.  Pre-evaluation forecasts issued October 2019 to December 2020 (for h=3)
-provide an honest out-of-sample residual history for each scheme.
+give an out-of-sample residual history for each scheme.
 """
 from __future__ import annotations
 

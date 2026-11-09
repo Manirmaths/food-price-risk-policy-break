@@ -1,5 +1,5 @@
-"""Fair comparison of delayed corrections, with fresher-information benchmarks and
-uncertainty-aware TSPC variants.
+"""Comparison of the delayed corrections on the same base forecasts, including the
+latest-cross-section correction and the TSPC variants with level uncertainty.
 
 Every correction below is applied to the same base forecasts at the same
 origins and uses only residuals whose targets have matured by the origin.
